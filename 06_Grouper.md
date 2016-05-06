@@ -92,7 +92,7 @@ We will reuse identities created by Engineblock for consent as the entity source
 # dos2unix grouper.ui-2.3.0/dist/grouper/WEB-INF/classes/sources.xml
 # vi grouper.ui-2.3.0/dist/grouper/WEB-INF/classes/sources.xml
 ```
-Find a suitable place to paste the suggested ```<source>``` child below. An easy anchore should be the end of a previous ```<source```.
+Find a suitable place to paste the suggested ```<source>``` child below. An suitable anchor should be the end of a previous ```</source```.
 You can also adjust the existing example JndiSourceAdapter in place, which is what I did.
 ```
 ... Previous source anchor
