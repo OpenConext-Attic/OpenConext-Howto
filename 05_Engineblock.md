@@ -79,6 +79,8 @@ As opposed to Janus, Engineblock comes with it's own composer.phar so we don't n
 Adjust the engineblock defaults in system directory location
 ```
 # vi /etc/openconext/engineblock.ini
+```
+```
 hostname = engine.myconext.org
 auth.simplesamlphp.idp.entityId = http://engine.myconext.org/authentication/idp/metadata
 auth.simplesamlphp.idp.location = http://engine.myconext.org/authentication/idp/single-sign-on
@@ -137,6 +139,8 @@ Create a couple of apache vhost entries for api.myconext.org, engine.myconext.or
 static.myconext.org is optionally used for serving static content like SP and IdP logo's in the WAYF (Where Are You From page).
 ```
 # vi /etc/apache2/sites-available/engineblock.conf
+```
+```
 <VirtualHost *:80>
         ServerName api.myconext.org
         DocumentRoot /opt/OpenConext/engineblock/www/api
@@ -204,6 +208,8 @@ Enable this new apache vhost and reload apache
 Disable secure cookies (for now, take care of a secure installtion in production)
 ```
 # vi application/configs/application.ini
+```
+```
 [base]
 +use_secure_cookies = false
 ```
@@ -233,6 +239,8 @@ certData = [see /etc/openconext/engine.crt, paste cert as one line]
 Enable Engineblock Push synchronisation in ServiceRegistry
 ```
 # vi /opt/OpenConext/serviceregistry/modules/janus/app/config/config_janus_core.yml
+```
+```
     # Allow manual (or future automatic) pushing of all connections to remote system.
     push:
        remote:
@@ -264,12 +272,16 @@ Bootstrap the engineblock Janus API user
 Testing requires engineblock debug mode to be disabled as it tries to validate any XML document that enginebock creates using only xsd's. This results in time-outs that break engineblock functionality.
 ```
 # vi /etc/openconext/engineblock.ini
+```
+```
 ...
 debug=false
 ```
 If you want to keep debug=true enabled, you need to download the required xsd schema's and add them to the system libxml2 catalog
 ```
 # vi /etc/xml/catalog
+```
+```
 <catalog ...>
 ...
         <system systemId="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"
@@ -310,6 +322,8 @@ Don't forget to switch entity ID to production status, assign at least one IdP (
 Disable secure cookies
 ```
 # vi engineblock/vendor/simplesamlphp/simplesamlphp/config/config.php
+```
+```
 -        'session.cookie.secure' => TRUE,
 +        'session.cookie.secure' => false,
 ```
