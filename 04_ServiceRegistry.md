@@ -93,7 +93,7 @@ Create Janus cache and log directories
 # mkdir -p /var/log/janus-ssp/janus
 # chown www-data: /var/log/janus-ssp/janus
 ```
-Carefully inspect and edit app/config/config_janus_core.yml. I strongly reduced the number of workflow states to start with:
+Carefully inspect and edit app/config/config_janus_core.yml. I strongly reduced the number of workflow states to start with. Remember .yml files are indentation (errors) sensitive!
 ```
     # Configuration of systems in JANUS
     workflowstates:
