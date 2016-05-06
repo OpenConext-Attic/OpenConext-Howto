@@ -20,6 +20,8 @@ Create a hashed admin password
 Put the result of this command in the config.php and set memcache to be the default store type.
 ```
 # vi config/config.php
+```
+```
 -  'baseurlpath' => 'simplesaml/',
 +  'baseurlpath' => 'serviceregistry/',
 ...
@@ -78,6 +80,8 @@ For authentication Janus relies on any user simpleSAMLphp can provide through it
 We will use the 'user' attribute in Janus as link populated by the simpleSAMLphp admin authentication plugin.
 ```
 # vi ./app/config/config_janus_core.yml
+```
+```
  auth: 'admin'
  ...
  useridattr: 'user'
@@ -137,6 +141,8 @@ Ubuntu typically stores ca-certificates bundle in a different place
 Create an apache virtualhost for service registry
 ```
 # vi /etc/apache2/sites-available/serviceregistry.conf
+```
+```
 <VirtualHost *:80>
         ServerName serviceregistry.myconext.org
         DocumentRoot /var/www/html
@@ -151,6 +157,8 @@ Create an apache virtualhost for service registry
 Adjust the global apache conf to allow for documents to be served from the /opt/OpenConext top directory.
 ```
 # vi /etc/apache2/apache2.conf
+```
+```
 <Directory /var/www/> 
        Options Indexes FollowSymLinks 
        AllowOverride None 
@@ -177,6 +185,8 @@ The migrate scripte executed earlier takes ownership of the cache and log direct
 Make sure the vhost is reachable under it's chosen hostname by editing the hosts's hostfile or configure DNS appropriately.
 ```
 # vi /etc/hosts
+```
+```
 x.x.x.x		serviceregistry.myconext.org
 ```
 Service Registry should now be available on http://serviceregistry.myconext.org/serviceregistry/module.php/janus/index.php
