@@ -8,6 +8,8 @@ My ultimate goal while writing this how-to was profoundly understanding the mutu
 
 Most of the installations still point to my forks of the code because I hit some small snags here and there and at that time needed to make small adjustments to make the code or configurations work on a Debian based installation. I would recommend anyone to first try to checkout the original repositories so that you work with a recent codebase where possible and fallback to my forks if needed. I let the finding of those repositories as an excersise to the reader as it will greatly help in deeper understanding of the structure of OpenConext.
 
+Since understanding OpenConext and it's mutual dependancies was my main goal, I decided to strip out all secured access to any http endpoint. Configuring secured URL's isn't hard (or shouldn't be) but significantly and unnecessarily clogs the instructions in this how-to, while making debugging of problems harder. Make sure to secure all endpoints before putting OpenConext into production.
+
 ## Hostnames
 These are the (fictual) hostnames I used during installation of OpenConext. They only exist in my local hosts files, both on the host I work on and in the VM I used to install OpenConext. I deliberately departed from the default hostname openconext.org so that any deviation in hostname would be visible in all respective configuration files.
 ```
