@@ -1,2 +1,2 @@
 # OpenConext-Howto
-In-depth manual installation documentation on Ubuntu Xenial server
+OpenConext is developed on CentOS 6, soon 7 and the easy install requires a compatible setup on the target server. This manual however explores the journey of installing all the required parts on a fresh Ubuntu Xenial 16.04 LTS server. The purpose of the excercise being two-fold: help those unwilling or unable to fullfil the CentOS requirements and provide a thorough understanding of the actions "magically" done by the Ansible installation by executing them step-by-step, by hand.
