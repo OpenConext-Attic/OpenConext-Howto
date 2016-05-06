@@ -163,7 +163,7 @@ Adjust the global apache conf to allow for documents to be served from the /opt/
 +       Require all granted 
 + </Directory>
 ```
-Activate the  apache rewrite module, the serviceregistry vhost and rerstart apache
+Activate the  apache rewrite module, the serviceregistry vhost and restart apache
 ```
 # a2enmod rewrite
 # a2ensite serviceregistry
