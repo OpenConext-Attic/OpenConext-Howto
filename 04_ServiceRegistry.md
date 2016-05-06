@@ -70,7 +70,7 @@ Janus installation will ask some questions to bootsrap a basic configuration. Fo
 Execute the migrate.sh script to populate the Janus database, ignore the errors.
 ```
 # bin/migrate.sh
-``
+```
 For authentication Janus relies on any user simpleSAMLphp can provide through it's authentication mechanism. Normally this is done by bootstrapping an IdP in the parent simpleSAMLphp installation which would require a working Engineblock. This creates a circular dependancy which we will shortcut by assigning the default admin user with password we created a couple of lines above as default admin user for Janus.
 ```
 # mysql janus_db -e "INSERT INTO janus__user (userid, type, active) VALUES ('admin', 'a:2:{i:0;s:9:\"technical\";i:1;s:5:\"admin\";}', 'yes');"
