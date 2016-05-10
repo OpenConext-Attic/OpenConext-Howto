@@ -70,7 +70,7 @@ Check proper functioning of Metadata Exporter
 ...
 ```
 ## PDP
-Now we can install the actual PDP server, which consists of an API server and admin GUI.
+Now we can install the actual PDP server, which consists of an API server and admin GUI. This installation will, for now, shortcut the SAML authentication in order to have a functional service up and running. It shouldn't be too difficult to extend the apache configuration to SAML authenticated behaviour.
 
 First install required packages
 ```
