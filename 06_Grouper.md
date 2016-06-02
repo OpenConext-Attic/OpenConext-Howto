@@ -1,5 +1,5 @@
 # Grouper
-Although not a direct requirement of OpenConext all remaining parts require user's adminstrator virtual organisation membership of some sort that is consumed from the VOOT (Virtual Organisation Orgthogonal Technology) API (wich is described in the next chapter). VOOT can rely on Grouper for (admin) groupmembership claims. Grouper has a nice admin interface that makes it easy to assign test users to test admin organisations where needed in the rest of the How-to's.
+Although not a direct requirement of OpenConext all remaining parts require the user adminstrator to have a virtual organisation membership of some sort that is consumed from the VOOT (Virtual Organisation Orthogonal Technology) API (wich is described in the next chapter). VOOT can rely on Grouper for (admin) group membership claims. Grouper has a nice admin interface that makes it easy to assign test users to test admin organisations where needed in the rest of the How-to's.
 
 To smoothly run Grouper your VM needs to be equiped with at least 1.5G of memory. Although the preferred Java version is 7, it can be made to run on 8 which is the only choice (from packages) in Xenial.
 
@@ -86,8 +86,8 @@ Make shutdown.sh executable
 ```
 # chmod 755 shutdown.sh
 ```
-Add LDAP as entity source, please note the dependancies to your own directory server.
-We will reuse identities created by Engineblock for consent as the entity source. This means the entities will only be available after at least one succesful login through Engineblock!
+Add LDAP as entity source, please note the dependencies to your own directory server.
+We will reuse identities created by Engineblock for consent as the entity source. This means the entities will only be available after at least one successful login through Engineblock!
 ```
 # dos2unix grouper.ui-2.3.0/dist/grouper/WEB-INF/classes/sources.xml
 # vi grouper.ui-2.3.0/dist/grouper/WEB-INF/classes/sources.xml
@@ -317,7 +317,7 @@ Restart Grouper with the new source defined
 ```
 You may want to follow the startup sequence in apache-tomcat-6.0.35/logs/catalina.out to see if there are no problems.
 
-Test grouper LDAP koppeling, first see if there is any usable engineblock consent user
+Test grouper LDAP linkup, first see if there is any usable engineblock consent user
 ```
 # ldapsearch -H ldap://localhost -D "cn=admin,dc=myconext,dc=org" -w admin -b "dc=myconext,dc=org" collabPersonId
 ```

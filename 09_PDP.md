@@ -1,6 +1,6 @@
 # PDP Policy Decision Point
 
-PDP stands for Policy Decision Point and enables controlled access to Service Providers via EngineBlock, before completing the authentication request. Based on free-form rules like attribute values provided by an Identity Provider about a user.
+PDP stands for Policy Decision Point and enables controlled access to Service Providers via EngineBlock, before completing the authentication request, based on free-form rules like attribute values provided by an Identity Provider about a user.
 PDP (admin) needs metadata from Service Registry, but the available API does not suffice, so a new API service was created: Metadata Exporter.
 
 We first need to setup Metadata exporter before we can setup PDP.

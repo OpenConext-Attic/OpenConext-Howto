@@ -65,7 +65,7 @@ Now we can use composer.phar to download and install the dependancies.
 ```
 # bin/composer.phar install
 ```
-Janus installation will ask some questions to bootsrap a basic configuration. For the required secret you can use the following command:
+Janus installation will ask some questions to bootstrap a basic configuration. For the required secret you can use the following command:
 ```
 # tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 	2>/dev/null;echo
 ```
@@ -86,7 +86,7 @@ We will use the 'user' attribute in Janus as link populated by the simpleSAMLphp
  ...
  useridattr: 'user'
 ```
-Make sure apache user is owner of the serviceregistry folder(s)
+Make sure the apache user is the owner of the serviceregistry folder(s)
 ```
 # chown -R www-data. /opt/OpenConext/serviceregistry
 ```
@@ -97,7 +97,7 @@ Create Janus cache and log directories
 # mkdir -p /var/log/janus-ssp/janus
 # chown www-data: /var/log/janus-ssp/janus
 ```
-Carefully inspect and edit app/config/config_janus_core.yml. I strongly reduced the number of workflow states to start with. Remember .yml files are indentation (errors) sensitive!
+Carefully inspect and edit app/config/config_janus_core.yml. I reduced the number of workflow states significantly to start with. Remember .yml files are indentation (errors) sensitive!
 ```
     # Configuration of systems in JANUS
     workflowstates:
@@ -177,12 +177,12 @@ Activate the  apache rewrite module, the serviceregistry vhost and restart apach
 # a2ensite serviceregistry
 # service apache2 restart
 ```
-The migrate scripte executed earlier takes ownership of the cache and log directories. Assign them to apache user
+The migrate scripte executed earlier takes ownership of the cache and log directories. Assign them to the apache user
 ```
 # chown -R www-data: /var/cache/janus-ssp/janus
 # chown -R www-data: /var/log/janus-ssp/janus
 ```
-Make sure the vhost is reachable under it's chosen hostname by editing the hosts's hostfile or configure DNS appropriately.
+Make sure the vhost is reachable under its chosen hostname by editing the hosts hostfile or configure DNS appropriately.
 ```
 # vi /etc/hosts
 ```

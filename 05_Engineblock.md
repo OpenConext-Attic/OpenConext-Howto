@@ -1,8 +1,8 @@
 # Engineblock
 Engineblock is the core SAML engine of OpenConext and fullfils the hub functionality of what SAML defines as a hub-and-spoke federation.
 
-At the moment of writing Engineblock still has a hard dependancy to a functional directory server (LDAP). It uses this directory to store previously seen user attributes so that it is able to (re)request consent when any of the attributes changed since the last the user traversed Engineblock.
-We will use the default Ubuntu OpenLDAP installation use for the sake of simplicity use the default admin user to connect from Engineblock. This is not a recommended setup for production scenario's and left as an excersise to the reader.
+At the moment of writing Engineblock still has a hard dependency to a functional directory server (LDAP). It uses this directory to store previously seen user attributes so that it is able to (re)request consent when any of the attributes changed since the last time the user traversed Engineblock.
+We will use the default Ubuntu OpenLDAP installation and, or the sake of simplicity, use the default admin user to connect from Engineblock. This is not a recommended setup for production scenario's. A more secure setup is left as an excersise to the reader.
 
 ## OpenLDAP
 Reading up on Ubuntu OpenLDAP installation how-to's it seems important to have a valid line for the organisation FQDN pointing to 127.0.1.1
@@ -37,7 +37,7 @@ Make a clone of an engineblock repository, either a fork or the real thing.
 # ln -s OpenConext-engineblock engineblock
 # cd engineblock
 ```
-Engineblock gets it's configuration out-of-tree from a pre-defined system configuration directory
+Engineblock gets its configuration out-of-tree from a pre-defined system configuration directory
 ```
 # mkdir -p /etc/openconext
 # cp docs/example.engineblock.ini /etc/openconext/engineblock.ini
@@ -55,7 +55,7 @@ Bootstrap database
 > GRANT ALL PRIVILEGES ON engineblock.* TO 'engineblock'@'localhost' WITH GRANT OPTION;
 > flush privileges;
 ```
-For Engineblock to do it's work we need to import some extra directory schemas
+For Engineblock to do its work we need to import some extra directory schemas
 ```
 # cd ldap/schemas
 # ldapadd -Y EXTERNAL -H ldapi:/// -f eduperson-200412.ldif
@@ -63,7 +63,7 @@ For Engineblock to do it's work we need to import some extra directory schemas
 # ldapadd -Y EXTERNAL -H ldapi:/// -f collab.ldif
 # cd ../..
 ```
-There are some php(5) dependancy problems using the default simpleSAMLphp version required by engineblock in Ubuntu Xenial, which can be solved by editing composer.json
+There are some php(5) dependency problems using the default simpleSAMLphp version required by engineblock in Ubuntu Xenial, which can be solved by editing composer.json
 ```
 -        "simplesamlphp/simplesamlphp":      "~1.13",
 +        "simplesamlphp/simplesamlphp":      "~1.14",
@@ -205,7 +205,7 @@ Enable this new apache vhost and reload apache
 # a2ensite engineblock.conf
 # service apache2 reload
 ```
-Disable secure cookies (for now, take care of a secure installtion in production)
+Disable secure cookies (for now, take care of a secure installation in production)
 ```
 # vi application/configs/application.ini
 ```
@@ -259,7 +259,7 @@ Test the push interface using curl
 ```
 # curl -u janus:janus_password http://api.myconext.org/api/connections
 ```
-The answer should indeed be "No body" (which proves succesful authentication for now).
+The answer should indeed be "No body" (which proves successful authentication for now).
 
 Now you should be able to "Push" Service Registry metadata configuration to Engineblock.
 
@@ -277,7 +277,7 @@ Testing requires engineblock debug mode to be disabled as it tries to validate a
 ...
 debug=false
 ```
-If you want to keep debug=true enabled, you need to download the required xsd schema's and add them to the system libxml2 catalog
+If you want to keep debug=true enabled, you need to download the required xsd schemas and add them to the system libxml2 catalog
 ```
 # vi /etc/xml/catalog
 ```
@@ -327,4 +327,4 @@ Disable secure cookies
 -        'session.cookie.secure' => TRUE,
 +        'session.cookie.secure' => false,
 ```
-Now both http://profile.myconext.org/ and http://engine.myconext.org/authentication/sp/debug can be tested after the addresses are made resolvable from the hosts's environment.
+Now both http://profile.myconext.org/ and http://engine.myconext.org/authentication/sp/debug can be tested after the addresses are made resolvable from the hosts environment.

@@ -3,11 +3,11 @@ Integration with OpenConext is in the form of SAML authentication on the oAuth c
 
 Authz service consist of three parts
 * OpenConext-authorization-server
-  * De oAuth server
+  * The oAuth server
 * OpenConext-authorization-admin
-  * Admin interface om oAuth clients te beheren
+  * Admin interface to manage oAuth clients
 * OpenConext-authorization-playground
-  * oAuth client om server te testen
+  * oAuth client to test oAuth servers
 
 ```
 # cd /opt/OpenConext
@@ -67,7 +67,7 @@ Activate and start Authz Service
 ```
 For SAML authentication a full-fledged Shibboleth installation is preferred. However, for the sake of simplicity a much easier mod_mellon installation with some tweaks is used here.
 
-Make sure you understand the implications of these simplyfications, by inspecting the apache configuration files.
+Make sure you understand the implications of these simplifications, by inspecting the apache configuration files.
 
 Install mod-mellon
 ```
@@ -342,7 +342,7 @@ Based on the clientsAndResources.conf Authz-admin will automatically create new 
 ```
 Add admin.authz.myconext.org metadata xml in /etc/apache2/mellon to Service Registry using NameIDFormat=urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified and don't forget to "Push" configuration.
 
-In order to have a valid admin user, create an admin groep under the 'etc' folder in Grouper and make some administrator account that has authenticated via Engineblock at least once member of this group.
+In order to have a valid admin user, create an admin group under the 'etc' folder in Grouper and make some administrator account that has authenticated via Engineblock at least once member of this group.
 Adjust application.properties allowed_group properties to reflect membership of this group. Remember that VOOT will prefix the retrieved group with urn:collab.group:myconext: and Grouper will prefix group id with etc:
 
 Auth-server-admin is the most complext application in the OpenConext landscape until now, because it consumes all previously described parts to make it work.
