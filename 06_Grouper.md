@@ -383,3 +383,5 @@ Shutdown Grouper and then activate and start the services via systemd
 # systemctl status grouper.service
 ```
 You can now proceed to the installation of the VOOT API for Grouper.
+
+Next chapter: [VOOT](https://github.com/mrvanes/OpenConext-Howto/blob/master/07_VOOT.md)
