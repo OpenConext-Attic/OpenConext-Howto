@@ -102,3 +102,5 @@ Test http://localhost:9090/
 }
 ```
 This oAuth error is OK and will be solved after installing oAuth in the next Chapter (OpenConext is quite entangled).
+
+Next chapter: [Authz](https://github.com/mrvanes/OpenConext-Howto/blob/master/08_Authz.md)
