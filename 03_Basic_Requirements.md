@@ -42,3 +42,5 @@ And last, install commandline tools git, curl and jq (jq is nice tool to pretty-
 ```
 
 We're now ready to begin our journey.
+
+Next chapter: [Service Registry](https://github.com/mrvanes/OpenConext-Howto/blob/master/04_ServiceRegistry.md)
