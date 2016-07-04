@@ -328,3 +328,5 @@ Disable secure cookies
 +        'session.cookie.secure' => false,
 ```
 Now both http://profile.myconext.org/ and http://engine.myconext.org/authentication/sp/debug can be tested after the addresses are made resolvable from the hosts environment.
+
+Next chapter: [Grouper](https://github.com/mrvanes/OpenConext-Howto/blob/master/06_Grouper.md)
