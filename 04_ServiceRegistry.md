@@ -190,3 +190,5 @@ Make sure the vhost is reachable under its chosen hostname by editing the hosts 
 x.x.x.x		serviceregistry.myconext.org
 ```
 Service Registry should now be available on http://serviceregistry.myconext.org/serviceregistry/module.php/janus/index.php
+
+Next chapter: [Engineblock](https://github.com/mrvanes/OpenConext-Howto/blob/master/05_Engineblock.md)
